@@ -1,0 +1,36 @@
+'BEGIN TRANSACTION;
+'CREATE TABLE Album (
+        id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT UNIQUE,
+        title TEXT,
+        artist_id INTEGER
+     );
+'INSERT INTO "Album" VALUES(1,'iv',1);
+'INSERT INTO "Album" VALUES(2,'who made who',2);
+'INSERT INTO "Album" VALUES(3,'iv',1);
+'INSERT INTO "Album" VALUES(4,'who made who',2);
+'INSERT INTO "Album" VALUES(5,'iv',1);
+'INSERT INTO "Album" VALUES(6,'who made who',2);
+'CREATE TABLE Artist (
+        id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT UNIQUE,
+        name TEXT
+        );
+'INSERT INTO "Artist" VALUES(1,'a');
+'INSERT INTO "Artist" VALUES(2,'a');
+'INSERT INTO "Artist" VALUES(3,'b');
+'CREATE TABLE Genre (
+        id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT UNIQUE,
+        name TEXT
+        );
+'CREATE TABLE Track(
+            id integer primary key,
+            title text,
+            album_id integer,
+            genere_id integer
+                       
+        );
+'INSERT INTO "Track" VALUES(1,'Black dog',1,1);
+'INSERT INTO "Track" VALUES(2,'Black cat',2,2);
+'DELETE FROM "sqlite_sequence";
+'INSERT INTO "sqlite_sequence" VALUES('Artist',3);
+'INSERT INTO "sqlite_sequence" VALUES('Album',6);
+'COMMIT;
